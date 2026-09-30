@@ -1,129 +1,14 @@
-console.log("Tokyo993 Portfolio Loaded");
-
-const translations = {
-  en: {
-    nav_skills: "Skills",
-    nav_experience: "Experience",
-    nav_projects: "Projects",
-    hero_role: "BACKEND DEVELOPER",
-    hero_desc: "Backend developer with 3+ years of experience building automation systems, APIs, AI integrations and scalable software solutions.",
-    btn_github: "GitHub",
-    btn_telegram: "Telegram",
-    contact_location: "Germany",
-    skills_title: "TECHNICAL SKILLS",
-    skill_backend: "Backend",
-    skill_database: "Database",
-    skill_ai: "AI & Automation",
-    skill_frontend: "Frontend",
-    skill_tools: "Tools",
-    skill_other: "Other",
-    experience_title: "EXPERIENCE",
-    job1_title: "Software Developer",
-    job1_desc: "Worked on automation systems, social platforms and data processing solutions.",
-    job1_rcranger: "Automated catalog processing, data collection and OpenAI-powered structuring.",
-    job1_beamiie: "Developed social platform features including REST API, notifications, AI moderation and database improvements.",
-    job1_fluorine: "Improved onboarding, registration, messaging systems and fixed product issues.",
-    job2_title: "Freelance Development",
-    job2_dates: "2022 - Present",
-    job2_desc: "Development of personal software products, automation tools and web applications.",
-    projects_title: "MY PROJECTS",
-    project1_desc: "Windows utility fixing multi-monitor minimize behavior.",
-    project2_desc: "Electron desktop application for batch image compression.",
-    project3_desc: "Automation tool for Telegram messaging.",
-    project4_desc: "Interactive landing page with GSAP animations.",
-    link_github: "GitHub →",
-    link_website: "Website →"
-  },
-  de: {
-    nav_skills: "Fähigkeiten",
-    nav_experience: "Erfahrung",
-    nav_projects: "Projekte",
-    hero_role: "BACKEND-ENTWICKLER",
-    hero_desc: "Backend-Entwickler mit über 3 Jahren Erfahrung in der Entwicklung von Automatisierungssystemen, APIs, KI-Integrationen und skalierbaren Softwarelösungen.",
-    btn_github: "GitHub",
-    btn_telegram: "Telegram",
-    contact_location: "Deutschland",
-    skills_title: "TECHNISCHE FÄHIGKEITEN",
-    skill_backend: "Backend",
-    skill_database: "Datenbank",
-    skill_ai: "KI & Automatisierung",
-    skill_frontend: "Frontend",
-    skill_tools: "Werkzeuge",
-    skill_other: "Sonstiges",
-    experience_title: "ERFAHRUNG",
-    job1_title: "Softwareentwickler",
-    job1_desc: "Arbeit an Automatisierungssystemen, sozialen Plattformen und Datenverarbeitungslösungen.",
-    job1_rcranger: "Automatisierte Katalogverarbeitung, Datenerfassung und OpenAI-gestützte Strukturierung.",
-    job1_beamiie: "Entwicklung von Social-Plattform-Funktionen wie REST-API, Benachrichtigungen, KI-Moderation und Datenbankverbesserungen.",
-    job1_fluorine: "Verbesserung von Onboarding, Registrierung, Messaging-Systemen und Behebung von Produktfehlern.",
-    job2_title: "Freiberufliche Entwicklung",
-    job2_dates: "2022 - Heute",
-    job2_desc: "Entwicklung eigener Softwareprodukte, Automatisierungstools und Webanwendungen.",
-    projects_title: "MEINE PROJEKTE",
-    project1_desc: "Windows-Dienstprogramm zur Behebung des Minimierungsverhaltens bei mehreren Monitoren.",
-    project2_desc: "Electron-Desktop-Anwendung zur Stapelkomprimierung von Bildern.",
-    project3_desc: "Automatisierungstool für Telegram-Nachrichten.",
-    project4_desc: "Interaktive Landingpage mit GSAP-Animationen.",
-    link_github: "GitHub →",
-    link_website: "Website →"
-  },
-  ru: {
-    nav_skills: "Навыки",
-    nav_experience: "Опыт",
-    nav_projects: "Проекты",
-    hero_role: "BACKEND-РАЗРАБОТЧИК",
-    hero_desc: "Backend-разработчик с опытом более 3 лет: автоматизация процессов, API, интеграции с ИИ и масштабируемые программные решения.",
-    btn_github: "GitHub",
-    btn_telegram: "Telegram",
-    contact_location: "Германия",
-    skills_title: "ТЕХНИЧЕСКИЕ НАВЫКИ",
-    skill_backend: "Backend",
-    skill_database: "База данных",
-    skill_ai: "ИИ и автоматизация",
-    skill_frontend: "Frontend",
-    skill_tools: "Инструменты",
-    skill_other: "Другое",
-    experience_title: "ОПЫТ РАБОТЫ",
-    job1_title: "Software Developer",
-    job1_desc: "Работа над системами автоматизации, социальными платформами и обработкой данных.",
-    job1_rcranger: "Автоматизация обработки каталогов, сбор данных и структурирование с помощью OpenAI.",
-    job1_beamiie: "Разработка функций социальной платформы: REST API, уведомления, ИИ-модерация и улучшения базы данных.",
-    job1_fluorine: "Улучшение онбординга, регистрации, систем сообщений и исправление ошибок продукта.",
-    job2_title: "Фриланс-разработка",
-    job2_dates: "2022 - настоящее время",
-    job2_desc: "Разработка собственных программных продуктов, инструментов автоматизации и веб-приложений.",
-    projects_title: "МОИ ПРОЕКТЫ",
-    project1_desc: "Утилита для Windows, исправляющая поведение сворачивания при нескольких мониторах.",
-    project2_desc: "Десктопное приложение на Electron для пакетного сжатия изображений.",
-    project3_desc: "Инструмент автоматизации для рассылки сообщений в Telegram.",
-    project4_desc: "Интерактивный лендинг с анимациями на GSAP.",
-    link_github: "GitHub →",
-    link_website: "Сайт →"
-  }
-};
-
-function applyLanguage(lang) {
-  const dict = translations[lang] || translations.en;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key]) {
-      el.textContent = dict[key];
-    }
+const translations = {"nav_projects": {"en": "Work", "ru": "Проекты", "de": "Projekte"}, "nav_experience": {"en": "Experience", "ru": "Опыт", "de": "Erfahrung"}, "nav_skills": {"en": "Skills", "ru": "Навыки", "de": "Kenntnisse"}, "cta_hotel": {"en": "View demo", "ru": "Открыть демо", "de": "Demo ansehen"}, "hotel_title": {"en": "Hotel AI agent demo", "ru": "AI-агент для отелей", "de": "KI-Agent für Hotels"}, "hotel_desc": {"en": "Agent-based project for a hotel network. The demo presents an AI concierge, guest questions and booking lookup.", "ru": "Проект с AI-агентами для сети отелей. Демо показывает AI-консьержа, вопросы гостей и поиск бронирования.", "de": "Projekt mit KI-Agenten für ein Hotelnetzwerk. Die Demo zeigt einen KI-Concierge, Gästefragen und eine Buchungssuche."}, "cta_unreal": {"en": "View on Fab", "ru": "Открыть на Fab", "de": "Auf Fab ansehen"}, "unreal_title": {"en": "Spawn Assets Plugin", "ru": "Spawn Assets Plugin", "de": "Spawn Assets Plugin"}, "unreal_desc": {"en": "Unreal Engine plugin that automates asset placement in scenes and reduces repetitive editor work. Built for UE 5.8.", "ru": "Плагин для Unreal Engine, который автоматизирует размещение ассетов в сцене и сокращает рутинную работу в редакторе. Для UE 5.8.", "de": "Unreal-Engine-Plugin zur automatisierten Platzierung von Assets in Szenen. Für UE 5.8."}, "cta_windows": {"en": "View source", "ru": "Открыть код", "de": "Quellcode ansehen"}, "windows_title": {"en": "Win + D Single Monitor", "ru": "Win + D Single Monitor", "de": "Win + D Single Monitor"}, "windows_desc": {"en": "A Windows utility that minimizes windows on the active monitor, keeping the rest of a multi-monitor workspace intact.", "ru": "Утилита Windows: сворачивает окна только на активном мониторе, сохраняя рабочее пространство на остальных экранах.", "de": "Windows-Tool zum Minimieren von Fenstern auf dem aktiven Monitor. Die übrigen Bildschirme bleiben unverändert."}, "cta_photo": {"en": "View source", "ru": "Открыть код", "de": "Quellcode ansehen"}, "photo_title": {"en": "Photo Compressor", "ru": "Photo Compressor", "de": "Photo Compressor"}, "photo_desc": {"en": "Desktop application for batch image compression, replacing one-by-one image preparation with a single workflow.", "ru": "Desktop-приложение для пакетного сжатия изображений вместо ручной обработки файлов по одному.", "de": "Desktop-App zur Stapelkomprimierung von Bildern statt manueller Einzelbearbeitung."}, "cta_scout": {"en": "View source", "ru": "Открыть код", "de": "Quellcode ansehen"}, "scout_title": {"en": "Royal Models reporting bot", "ru": "Бот отчётности Royal Models", "de": "Royal Models Reporting-Bot"}, "scout_desc": {"en": "Telegram bot for daily scout reports, reducing manual follow-up for agency managers.", "ru": "Telegram-бот для ежедневных отчётов скаутов, который сокращает ручной контроль со стороны менеджеров агентства.", "de": "Telegram-Bot für tägliche Scout-Berichte, der die manuelle Nachverfolgung durch Agenturmanager reduziert."}, "cta_telegram": {"en": "View source", "ru": "Открыть код", "de": "Quellcode ansehen"}, "telegram_title": {"en": "Telegram Multi Account Sender", "ru": "Telegram Multi Account Sender", "de": "Telegram Multi Account Sender"}, "telegram_desc": {"en": "One interface for sending template messages through multiple Telegram accounts.", "ru": "Единый интерфейс для отправки шаблонных сообщений через несколько Telegram-аккаунтов.", "de": "Eine Oberfläche für Vorlagennachrichten über mehrere Telegram-Konten."}, "cta_royal": {"en": "Visit website", "ru": "Открыть сайт", "de": "Website ansehen"}, "royal_title": {"en": "Royal Models website", "ru": "Сайт Royal Models", "de": "Royal Models Website"}, "royal_desc": {"en": "Responsive agency website with layouts adapted to desktop and mobile screens.", "ru": "Адаптивный сайт агентства с удобным отображением на компьютерах и мобильных устройствах.", "de": "Responsive Agentur-Website für Desktop und mobile Geräte."}, "cta_aespa": {"en": "Visit website", "ru": "Открыть сайт", "de": "Website ansehen"}, "aespa_title": {"en": "Aespa interactive landing", "ru": "Интерактивный лендинг Aespa", "de": "Interaktive Aespa-Landingpage"}, "aespa_desc": {"en": "A GTA VI-inspired landing page exploring scroll animations and interactive interfaces.", "ru": "Лендинг в стиле GTA VI с анимациями прокрутки и интерактивным интерфейсом.", "de": "Eine von GTA VI inspirierte Landingpage mit Scroll-Animationen und interaktiver Oberfläche."}, "it_date": {"en": "2023 — April 2026", "ru": "2023 — апрель 2026", "de": "2023 — April 2026"}, "it_desc": {"en": "Built automation and data-processing features; contributed to commercial social platforms.", "ru": "Разрабатывал автоматизацию и обработку данных; участвовал в развитии коммерческих социальных платформ.", "de": "Entwicklung von Automatisierung und Datenverarbeitung sowie Mitarbeit an kommerziellen sozialen Plattformen."}, "it0": {"en": "Automated manufacturer data collection for the RCRanger catalog and integrated OpenAI API for structured CMS data.", "ru": "Автоматизировал сбор данных производителей для каталога RCRanger и интегрировал OpenAI API для подготовки структурированных данных для CMS.", "de": "Automatisierte Herstellerdatenerfassung für den RCRanger-Katalog und integrierte OpenAI API zur Strukturierung von CMS-Daten."}, "it1": {"en": "Improved Fluorine registration, verification-code delivery and messaging; fixed backend, frontend and Electron issues.", "ru": "Улучшал регистрацию, доставку кодов подтверждения и сообщения в Fluorine; исправлял ошибки backend, frontend и Electron-приложения.", "de": "Verbesserte Registrierung, Zustellung von Bestätigungscodes und Nachrichten in Fluorine; behob Backend-, Frontend- und Electron-Probleme."}, "beamiie_date": {"en": "2025 — present", "ru": "2025 — настоящее время", "de": "2025 — heute"}, "beamiie_desc": {"en": "Backend development for a social platform.", "ru": "Разработка backend социальной платформы.", "de": "Backend-Entwicklung für eine soziale Plattform."}, "beamiie0": {"en": "Implemented comment replies, content view counting and unique-view checks.", "ru": "Реализовал ответы на комментарии, подсчёт просмотров контента и проверку уникальных просмотров.", "de": "Implementierte Kommentarantworten, Inhaltsaufrufe und die Prüfung eindeutiger Aufrufe."}, "beamiie1": {"en": "Contributed to notifications, REST API and database development; integrated AI message moderation.", "ru": "Участвовал в разработке уведомлений, REST API и базы данных; внедрил AI-модерацию сообщений.", "de": "Arbeitete an Benachrichtigungen, REST API und Datenbankentwicklung; integrierte KI-Nachrichtenmoderation."}, "freelance_date": {"en": "2025 — present", "ru": "2025 — настоящее время", "de": "2025 — heute"}, "freelance_desc": {"en": "Building automation tools, desktop applications and web projects.", "ru": "Разрабатываю инструменты автоматизации, desktop-приложения и веб-проекты.", "de": "Entwicklung von Automatisierungstools, Desktop-Apps und Webprojekten."}, "skip": {"en": "Skip to content", "ru": "К содержимому", "de": "Zum Inhalt"}, "location": {"en": "BASED IN GERMANY", "ru": "ЖИВУ В ГЕРМАНИИ", "de": "WOHNHAFT IN DEUTSCHLAND"}, "headline": {"en": "Backend systems.\nAI that works.", "ru": "Backend-системы.\nAI в деле.", "de": "Backend-Systeme.\nKI in der Praxis."}, "intro": {"en": "Python backend developer with 3+ years of commercial experience. I build APIs, integrate AI and automate repetitive business workflows.", "ru": "Python backend-разработчик с 3+ годами коммерческого опыта. Разрабатываю API, интегрирую AI и автоматизирую рутинные бизнес-процессы.", "de": "Python-Backend-Entwickler mit über 3 Jahren Berufserfahrung. Ich entwickle APIs, integriere KI und automatisiere wiederkehrende Geschäftsprozesse."}, "explore": {"en": "Explore my work", "ru": "Посмотреть проекты", "de": "Projekte entdecken"}, "contact": {"en": "Get in touch", "ru": "Связаться", "de": "Kontakt aufnehmen"}, "projects_label": {"en": "PORTFOLIO", "ru": "ПОРТФОЛИО", "de": "PORTFOLIO"}, "projects_heading": {"en": "Selected work", "ru": "Избранные проекты", "de": "Ausgewählte Projekte"}, "projects_intro": {"en": "Tools, integrations and interfaces built around practical problems.", "ru": "Инструменты, интеграции и интерфейсы для практических задач.", "de": "Tools, Integrationen und Oberflächen für konkrete Aufgaben."}, "exp_label": {"en": "BACKGROUND", "ru": "ОПЫТ", "de": "ERFAHRUNG"}, "exp_heading": {"en": "Commercial experience", "ru": "Коммерческий опыт", "de": "Berufserfahrung"}, "skills_label": {"en": "TOOLKIT", "ru": "СТЕК", "de": "TECHNOLOGIEN"}, "skills_heading": {"en": "What I work with", "ru": "С чем я работаю", "de": "Meine Technologien"}, "languages": {"en": "Languages: Russian & Ukrainian — native · English — A2 · German — A2", "ru": "Языки: русский и украинский — родные · английский — A2 · немецкий — A2", "de": "Sprachen: Russisch & Ukrainisch — Muttersprachen · Englisch — A2 · Deutsch — A2"}, "contact_label": {"en": "CONTACT", "ru": "КОНТАКТЫ", "de": "KONTAKT"}, "contact_heading": {"en": "Have a backend or AI\nchallenge in mind?", "ru": "Есть задача\nдля backend или AI?", "de": "Eine Aufgabe\nfür Backend oder KI?"}, "resume_en": {"en": "Resume / EN", "ru": "Резюме / EN", "de": "Lebenslauf / EN"}, "resume_ru": {"en": "Resume / RU", "ru": "Резюме / RU", "de": "Lebenslauf / RU"}, "top": {"en": "Back to top", "ru": "Наверх", "de": "Nach oben"}};
+function setLanguage(lang) {
+  if (!['en', 'de', 'ru'].includes(lang)) lang = 'en';
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const value = translations[el.dataset.i18n]?.[lang];
+    if (value) el.textContent = value;
   });
-  document.documentElement.setAttribute("lang", lang);
-  document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
-  });
-  localStorage.setItem("preferredLang", lang);
+  document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
+  try { localStorage.setItem('portfolio-language', lang); } catch {}
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("preferredLang") || "en";
-  applyLanguage(savedLang);
-
-  document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      applyLanguage(btn.getAttribute("data-lang"));
-    });
-  });
-});
+document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+let saved; try { saved = localStorage.getItem('portfolio-language'); } catch {}
+setLanguage(saved || 'en');
